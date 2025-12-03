@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.museu.controller.MenuController">
+
+    <left>
+        <VBox spacing="10.0" style="-fx-background-color: #2c3e50;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+            </padding>
+
+            <Label text="MENU" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="20.0" />
+                </VBox.margin>
+            </Label>
+
+            <Button mnemonicParsing="false" onAction="#onBtnItensHistoricosClick" prefWidth="180.0" text="Itens Históricos" />
+            <Button mnemonicParsing="false" onAction="#onBtnBibliograficosClick" prefWidth="180.0" text="Bibliográficos" />
+
+            <Button mnemonicParsing="false" onAction="#onBtnPeriodicosClick" prefWidth="180.0" text="Periódicos" />
+
+            <Button mnemonicParsing="false" onAction="#onBtnAutoresClick" prefWidth="180.0" text="Autores" />
+            <Button mnemonicParsing="false" onAction="#onBtnAssuntosClick" prefWidth="180.0" text="Assuntos" />
+            <Button mnemonicParsing="false" onAction="#onBtnSeriesClick" prefWidth="180.0" text="Series"/>
+
+            <Button mnemonicParsing="false" onAction="#onBtnDoadoresClick" prefWidth="180.0" text="Doadores" />
+
+            <Button fx:id="btnLogs" mnemonicParsing="false" onAction="#onBtnLogsClick" prefWidth="180.0" text="Logs do Sistema"/>
+
+            <VBox VBox.vgrow="ALWAYS" />
+
+            <Button mnemonicParsing="false" onAction="#onBtnSairClick" prefWidth="180.0" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Sair" />
+
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Bem-vindo ao Sistema Museu Treze de Maio">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Label text="Selecione uma opção no menu lateral para começar." textFill="#7c7c7c">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

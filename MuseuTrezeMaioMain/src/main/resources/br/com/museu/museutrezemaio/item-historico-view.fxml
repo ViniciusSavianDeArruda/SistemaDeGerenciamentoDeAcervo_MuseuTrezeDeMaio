@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.museu.controller.ItemHistoricoController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="20.0">
+        <Button onAction="#onBtnVoltarClick" text="&lt; Voltar" />
+        <Label text="Acervo Histórico (Objetos)">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+    </HBox>
+
+    <VBox spacing="10.0" style="-fx-border-color: #ccc; -fx-padding: 10; -fx-background-color: #fff8e1;">
+        <Label text="Novo Item Histórico" style="-fx-font-weight: bold;"/>
+
+        <HBox spacing="10.0">
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Título / Nome do Objeto:" />
+                <TextField fx:id="txtTitulo" promptText="Ex: Moeda de 40 Réis" />
+            </VBox>
+
+            <VBox prefWidth="200.0">
+                <Label text="Doador:" />
+                <ComboBox fx:id="cbDoador" prefWidth="200.0" promptText="Selecione..." />
+            </VBox>
+
+            <VBox>
+                <Label text="Material:" />
+                <TextField fx:id="txtMaterial" prefWidth="150.0" promptText="Ex: Cobre" />
+            </VBox>
+        </HBox>
+
+        <HBox spacing="10.0">
+            <VBox>
+                <Label text="Data Criação (Histórica):" />
+                <DatePicker fx:id="dtCriacao" prefWidth="150.0"/>
+            </VBox>
+            <VBox>
+                <Label text="Dimensões:" />
+                <TextField fx:id="txtDimensoes" prefWidth="120.0" promptText="Ex: 3cm x 3cm" />
+            </VBox>
+            <VBox>
+                <Label text="Local Armazenado:" />
+                <TextField fx:id="txtLocal" prefWidth="150.0" promptText="Ex: Gaveta 3" />
+            </VBox>
+            <VBox>
+                <Label text="Data Aquisição:" />
+                <DatePicker fx:id="dtAquisicao" prefWidth="120.0" />
+            </VBox>
+        </HBox>
+
+        <VBox>
+            <Label text="Descrição Detalhada:" />
+            <TextArea fx:id="txtDescricao" prefHeight="60.0" wrapText="true"/>
+        </VBox>
+
+        <Button fx:id="btnSalvar" onAction="#onBtnSalvarClick" text="Salvar Item" style="-fx-background-color: #d35400; -fx-text-fill: white; -fx-font-weight: bold;" />
+    </VBox>
+
+    <Label text="Itens Cadastrados:" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="tabelaItens" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50.0" />
+            <TableColumn fx:id="colTitulo" text="Título" prefWidth="250.0" />
+
+            <TableColumn fx:id="colDoador" text="Doador" prefWidth="150.0" />
+
+            <TableColumn fx:id="colMaterial" text="Material" prefWidth="150.0" />
+            <TableColumn fx:id="colLocal" text="Local Armazenado" prefWidth="150.0" />
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button text="Excluir Selecionado" fx:id="btnExcluir" onAction="#onBtnExcluirClick" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" />
+    </HBox>
+
+</VBox>

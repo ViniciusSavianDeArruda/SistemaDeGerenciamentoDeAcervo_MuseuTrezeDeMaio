@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.museu.controller.BibliotecaController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="20.0">
+        <Button onAction="#onBtnVoltarClick" text="&lt; Voltar" />
+        <Label text="Gerenciamento de Biblioteca">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+    </HBox>
+
+    <HBox spacing="20.0" style="-fx-border-color: #ccc; -fx-padding: 10; -fx-background-color: #f9f9f9;">
+
+        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+            <Label text="Novo Livro" style="-fx-font-weight: bold;"/>
+
+            <HBox spacing="10.0">
+                <VBox HBox.hgrow="ALWAYS">
+                    <Label text="Título:" />
+                    <TextField fx:id="txtTitulo" promptText="Título Principal" />
+                </VBox>
+
+                <VBox prefWidth="150.0">
+                    <Label text="Autor:" />
+                    <ComboBox fx:id="cbAutor" prefWidth="150.0" promptText="Selecione..." />
+                </VBox>
+
+                <VBox prefWidth="150.0">
+                    <Label text="Assunto:" />
+                    <ComboBox fx:id="cbAssunto" prefWidth="150.0" promptText="Selecione..." />
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10.0">
+                <VBox HBox.hgrow="ALWAYS">
+                    <Label text="Título Original:" />
+                    <TextField fx:id="txtTituloOriginal" promptText="Idioma original (opcional)" />
+                </VBox>
+                <VBox prefWidth="150.0">
+                    <Label text="Série:" />
+                    <ComboBox fx:id="cbSerie" prefWidth="150.0" promptText="Selecione..." />
+                </VBox>
+
+                <VBox prefWidth="150.0">
+                    <Label text="Doador:" />
+                    <ComboBox fx:id="cbDoador" prefWidth="150.0" promptText="Selecione..." />
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10.0">
+                <VBox>
+                    <Label text="ISBN:" />
+                    <TextField fx:id="txtISBN" prefWidth="120.0" />
+                </VBox>
+                <VBox>
+                    <Label text="Edição:" />
+                    <TextField fx:id="txtEdicao" prefWidth="80.0" />
+                </VBox>
+                <VBox>
+                    <Label text="Local Chamada:" />
+                    <TextField fx:id="txtLocal" prefWidth="100.0" />
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10.0">
+                <VBox HBox.hgrow="ALWAYS">
+                    <Label text="Descrição Física:" />
+                    <TextField fx:id="txtDescFisica" promptText="Ex: xii, 320 p." />
+                </VBox>
+                <VBox>
+                    <Label text="Data Aquisição:" />
+                    <DatePicker fx:id="dtAquisicao" prefWidth="120.0"/>
+                </VBox>
+            </HBox>
+
+            <Button fx:id="btnSalvar" onAction="#onBtnSalvarClick" text="Salvar Livro" maxWidth="Infinity" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" />
+        </VBox>
+
+        <VBox alignment="TOP_CENTER" spacing="5.0" style="-fx-border-color: #ddd; -fx-padding: 5;">
+            <Label text="Capa / Mídia" style="-fx-font-size: 10px;"/>
+            <ImageView fx:id="imgCapa" fitHeight="150.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #eee;" />
+            <Button fx:id="btnSelecionar" text="Selecionar..." onAction="#onBtnSelecionarImagemClick" style="-fx-font-size: 10px;"/>
+            <Label fx:id="lblCaminhoImagem" text="..." textFill="#999" wrapText="true" maxWidth="110.0" style="-fx-font-size: 9px;"/>
+        </VBox>
+
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #eec; -fx-padding: 5; -fx-background-radius: 5;">
+        <Label text="🔍 Pesquisar:" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="txtPesquisa" promptText="Digite título ou ISBN..." HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <Label text="Acervo Cadastrado:" style="-fx-font-weight: bold;"/>
+
+    <TableView fx:id="tabelaLivros" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="30.0" />
+            <TableColumn fx:id="colTitulo" text="Título" prefWidth="200.0" />
+            <TableColumn fx:id="colAutor" text="Autor" prefWidth="100.0" />
+            <TableColumn fx:id="colAssunto" text="Assunto" prefWidth="80.0" />
+            <TableColumn fx:id="colSerie" text="Série" prefWidth="80.0" />
+
+            <TableColumn fx:id="colDoador" text="Doador" prefWidth="100.0" />
+
+            <TableColumn fx:id="colISBN" text="ISBN" prefWidth="80.0" />
+            <TableColumn fx:id="colLocal" text="Local" prefWidth="60.0" />
+            <TableColumn fx:id="colEdicao" text="Ed." prefWidth="40.0" />
+            <TableColumn fx:id="colAno" text="Data" prefWidth="80.0" />
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10.0">
+        <Button fx:id="btnExcluir" text="Excluir Selecionado" onAction="#onBtnExcluirClick" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" />
+    </HBox>
+</VBox>
