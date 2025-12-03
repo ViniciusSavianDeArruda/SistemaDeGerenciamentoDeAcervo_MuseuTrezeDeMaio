@@ -38,6 +38,7 @@ Mapeia o modelo conceitual para uma estrutura de tabelas, com chaves primárias 
 
 ## Interface do Sistema
 
+---
 
 ## Ferramentas Utilizadas
 *   **SGBD:** Microsoft SQL Server
@@ -67,7 +68,7 @@ Mapeia o modelo conceitual para uma estrutura de tabelas, com chaves primárias 
 5.  Execute o script completo para popular o banco de dados com dados de exemplo.
 6.  (Opcional) Para verificar se tudo está funcionando, abra e execute o arquivo `Consultas_db_Museu_Treze_Maio.sql`.
 
-7. PARTE DO JAVA
+7. PARTE DO JAVA...
 ---
 
 ## Estrutura do Projeto
@@ -77,12 +78,3 @@ Mapeia o modelo conceitual para uma estrutura de tabelas, com chaves primárias 
 *   `Dicionario-Dados/Dicionario de Dados.md`: Documentação detalhada de cada tabela e atributo do banco.
 *   `Modelos-Diagramas`: Arquivos fontes dos modelos e do caso de uso.
 *   `Imagens-Diagramas`: Imagens dos diagramas.
-
----
-
-## Interface do Sistema (Protótipo)
-Abaixo estão alguns exemplos de telas do protótipo da interface do sistema, desenvolvida para validar os requisitos com os stakeholders.
-
-**[INSERIR PRINTS DA INTERFACE AQUI]**
-*Exemplo: ![Tela de Login](caminho/para/tela_login.png)*
-*Exemplo: ![Tela de Cadastro](caminho/para/tela_cadastro.png)*
