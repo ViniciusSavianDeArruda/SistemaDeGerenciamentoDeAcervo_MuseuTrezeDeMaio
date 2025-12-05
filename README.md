@@ -74,6 +74,7 @@ Mapeia o modelo conceitual para uma estrutura de tabelas, com chaves primárias 
 | Integrante | Atividades/Responsabilidades |
 | :--- | :--- |
 | **Wilson Rocha** | Estrutura da Modelagem Lógica do Banco, Auxílio na escrita e validação dos Scripts SQL (DDL/DML). |
+| **Vinicius Arruda** | Estrutura da Modelagem Lógica do Banco, Auxílio na escrita e validação dos Scripts SQL (DDL/DML). |
 | **Felipe Isaia** | Configuração da Conexão com o banco, Realização dos Testes de Qualidade e Produção dos Vídeos de Demonstração. |
 | **Gabriel Reis** | **Desenvolvimento da Interface (JavaFX/FXML)**, Arquitetura do Código (MVC/Classes) e Integração Final do Sistema. |
 
